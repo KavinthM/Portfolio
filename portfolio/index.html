@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Kavinth</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css?v=16">
+
+    <!-- Icons -->
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Libraries -->
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Three.js for 3D Elements -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Particles.js for Background -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Fixed Backgrounds -->
+    <div id="particles-js"></div>
+    <div id="webgl-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">PORTFOLIO</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="full-screen-section">
+            <div class="hero-content">
+                <div class="hero-text-col">
+                    <h1 class="animate-text">Hello, I'm <span class="highlight">Kavinth</span></h1>
+                    <h2 class="animate-text">Third-year IT undergraduate at the <br> Sri Lanka Institute of Information
+                        Technology (SLIIT)</h2>
+                    <div class="cta-wrapper animate-text">
+                        <a href="#projects" class="btn primary-btn">View My Work</a>
+                        <a href="mailto:kaavinth2@gmail.com" class="btn secondary-btn">Contact Me</a>
+                        <a href="assets/cv.pdf" class="btn secondary-btn" download>Download CV</a>
+                    </div>
+                </div>
+                <div class="hero-img-col">
+                    <div class="img-wrapper">
+                        <img src="assets/profile.png" alt="Kavinth" class="profile-photo">
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="full-screen-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>01. About Me</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="reveal-text">I’m focused on gaining practical experience with modern digital
+                            technologies and applying my knowledge to real-world challenges.</p>
+                        <p class="reveal-text">I enjoy collaborating on projects, solving problems, and building
+                            solutions that combine both technical accuracy and creative thinking. My interests span
+                            software development, problem-solving, and modern web technologies, with a growing passion
+                            for UI/UX design and creating intuitive, user-centered experiences.</p>
+                        <p class="reveal-text">Motivated, detail-oriented, and committed to continuous learning, I’m
+                            always eager to explore new tools, work on challenging projects, and contribute meaningfully
+                            to innovative and dynamic teams.</p>
+                    </div>
+                    <div class="about-visuals">
+                        <!-- 3D or graphical accent can go here -->
+                        <div class="cube-placeholder"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="full-screen-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>02. Skills</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <div class="skill-list">
+                            <div class="skill-item"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+                            <div class="skill-item"><i class="devicon-python-plain colored"></i> Python</div>
+                            <div class="skill-item"><i class="devicon-c-plain colored"></i> C</div>
+                            <div class="skill-item"><i class="devicon-cplusplus-plain colored"></i> C++</div>
+                            <div class="skill-item"><i class="devicon-kotlin-plain colored"></i> Kotlin</div>
+                            <div class="skill-item"><i class="devicon-php-plain colored"></i> PHP</div>
+                            <div class="skill-item"><i class="devicon-html5-plain colored"></i> HTML</div>
+                            <div class="skill-item"><i class="devicon-css3-plain colored"></i> CSS</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frameworks & Technologies</h3>
+                        <div class="skill-list">
+                            <div class="skill-item"><i class="devicon-react-original colored"></i> ReactJS</div>
+                            <div class="skill-item"><i class="devicon-tailwindcss-original colored"></i> Tailwind CSS
+                            </div>
+                            <div class="skill-item"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
+                            <div class="skill-item"><i class="devicon-express-original"></i> Express.js</div>
+                            <div class="skill-item"><i class="devicon-java-plain colored"></i> Java Servlets</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Databases & Tools</h3>
+                        <div class="skill-list">
+                            <div class="skill-item"><i class="devicon-mongodb-plain colored"></i> MongoDB</div>
+                            <div class="skill-item"><i class="devicon-mysql-plain colored"></i> MySQL</div>
+                            <div class="skill-item"><i class="devicon-postman-plain colored"></i> Postman</div>
+                            <div class="skill-item"><i class="devicon-jira-plain colored"></i> JIRA</div>
+                            <div class="skill-item"><i class="fa-solid fa-server"></i> XAMPP</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Soft Skills</h3>
+                        <div class="skill-list">
+                            <div class="skill-item"><i class="fa-solid fa-lightbulb"></i> Problem Solving</div>
+                            <div class="skill-item"><i class="fa-solid fa-tasks"></i> Project Management</div>
+                            <div class="skill-item"><i class="fa-solid fa-users"></i> Public Relations</div>
+                            <div class="skill-item"><i class="fa-solid fa-user-group"></i> Teamwork</div>
+                            <div class="skill-item"><i class="fa-solid fa-clock"></i> Time Management</div>
+                            <div class="skill-item"><i class="fa-solid fa-crown"></i> Leadership</div>
+                            <div class="skill-item"><i class="fa-solid fa-comments"></i> Effective Communication</div>
+                            <div class="skill-item"><i class="fa-solid fa-brain"></i> Critical Thinking</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="full-screen-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>03. Featured Projects</h2>
+                </div>
+                <div class="projects-wrapper">
+                    <div class="project-card featured">
+                        <div class="project-image-gallery">
+                            <div class="main-image">
+                                <img src="assets/projects/smart-alert/login-screen.png" alt="Smart Alert Login">
+                            </div>
+                            <div class="thumbnails">
+                                <img src="assets/projects/smart-alert/admin-records.png" alt="Admin Dashboard">
+                                <img src="assets/projects/smart-alert/teacher-panel.png" alt="Teacher Panel">
+                                <img src="assets/projects/smart-alert/student-list.png" alt="Student List">
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Attendance Marking System (Smart Alert)</h3>
+                            <p>A comprehensive attendance management solution built with the <strong>MERN Stack</strong>
+                                (MongoDB, Express, React, Node.js). Features role-based access control, real-time
+                                reporting, and an intuitive dashboard.</p>
+                            <div class="tags">
+                                <span><i class="devicon-react-original colored"></i> React</span>
+                                <span><i class="devicon-nodejs-plain colored"></i> Node.js</span>
+                                <span><i class="devicon-express-original-wordmark"></i> Express</span>
+                                <span><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
+                                <span><i class="devicon-postman-plain colored"></i> Postman</span>
+                            </div>
+                            <a href="https://github.com/KavinthM/Attendance-Management-System" target="_blank"
+                                class="project-link"><i class="devicon-github-original"></i> View Code &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="project-card featured">
+                        <div class="project-image-gallery">
+                            <div class="main-image">
+                                <img src="assets/projects/gamespace/image-0.png" alt="GameSpace Main">
+                            </div>
+                            <div class="thumbnails">
+                                <img src="assets/projects/gamespace/image-0.png" alt="GameSpace Screenshot 1">
+                                <img src="assets/projects/gamespace/image-1.png" alt="GameSpace Screenshot 2">
+                                <img src="assets/projects/gamespace/image-2.png" alt="GameSpace Screenshot 3">
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>GameSpace</h3>
+                            <p>Developed a web-based Online Gaming System designed to provide an engaging and
+                                interactive
+                                gaming experience. Focused on crafting the <strong>Payment Gateway UI</strong> with an
+                                emphasis on clear navigation, smooth interaction flow, and modern visual design to
+                                simulate real transaction experiences.</p>
+                            <div class="tags">
+                                <span><i class="devicon-html5-plain colored"></i> HTML</span>
+                                <span><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                                <span><i class="devicon-mysql-plain colored"></i> MySQL</span>
+                                <span><i class="devicon-tomcat-line colored"></i> Apache Tomcat</span>
+                                <span><i class="devicon-eclipse-plain colored"></i> Eclipse</span>
+                            </div>
+                            <a href="https://github.com/KavinthM/GameSpace" target="_blank" class="project-link"><i
+                                    class="devicon-github-original"></i> View Code &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Contact/CTA Section -->
+        <section id="contact" class="full-screen-section">
+            <div class="container contact-container">
+                <div class="section-title center-text">
+                    <h2 class="contact-highlight">Get In Touch</h2>
+                    <div class="underline"></div>
+                </div>
+
+                <p class="contact-subtitle">Have a project in mind or want to discuss potential opportunities? Feel free
+                    to reach out!</p>
+
+                <div class="contact-grid">
+                    <!-- Left Column: Contact Info -->
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p>I'm always open to discussing product design work or partnership opportunities. Let's create
+                            something amazing together!</p>
+
+                        <div class="info-item">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="info-text">
+                                <h4>Email Me</h4>
+                                <a href="mailto:kaavinth2@gmail.com">kaavinth2@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="info-text">
+                                <h4>Location</h4>
+                                <span>Colombo, Sri Lanka</span>
+                            </div>
+                        </div>
+
+                        <div class="social-connect">
+                            <h4>Connect with me</h4>
+                            <div class="social-icons">
+                                <a href="https://www.linkedin.com/in/kavinth-manoharan-1783b4399" target="_blank"><i
+                                        class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="https://github.com/KavinthM" target="_blank"><i
+                                        class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Form Removed -->
+                </div>
+        </section>
+
+        <footer>
+            <p>Designed & Built by Kavinth</p>
+        </footer>
+
+    </main>
+
+    <!-- Main Logic -->
+    <script src="js/main.js?v=4"></script>
+</body>
+
+</html>
