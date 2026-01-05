@@ -79,9 +79,14 @@ document.addEventListener('DOMContentLoaded', () => {
         delay: 0.25
     });
 
-    // Section Reveals
+    // Section Reveals (excluding skills which load immediately)
     gsap.utils.toArray('section').forEach(section => {
-        const elems = section.querySelectorAll('h2, .skill-item, .project-card, .article-card');
+        // Skip animations for skills section - skills load immediately on page load
+        if (section.id === 'skills') {
+            return;
+        }
+        
+        const elems = section.querySelectorAll('h2, .project-card, .article-card');
         if (elems.length > 0) {
             gsap.fromTo(elems,
                 { y: 20, opacity: 0 },

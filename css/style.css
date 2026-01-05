@@ -514,6 +514,9 @@ body::after {
     transition: 0.3s;
     background: rgba(255, 255, 255, 0.01);
     white-space: nowrap;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
 }
 
 @media (max-width: 600px) {
