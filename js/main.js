@@ -232,20 +232,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // If on mobile and skills grid might be heavy/invisible, add a simple "Coming Soon" note
-    if (isMobile) {
-        const skillsSection = document.getElementById('skills');
-        if (skillsSection) {
-            let note = skillsSection.querySelector('.skills-coming-soon');
-            if (!note) {
-                note = document.createElement('div');
-                note.className = 'skills-coming-soon';
-                note.textContent = 'Skills view optimized for larger screens — Coming Soon on mobile';
-                const title = skillsSection.querySelector('.section-title');
-                if (title && title.parentNode) title.parentNode.insertBefore(note, title.nextSibling);
-                else skillsSection.appendChild(note);
-            }
-        }
-    }
+    // Skills section now works on all devices - removed "Coming Soon" message
 
 });
