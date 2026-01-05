@@ -11,6 +11,10 @@
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
 
+    /* Fallback colors */
+    --text-color: var(--text-main);
+    --font-mono: 'Courier New', monospace;
+
     --ease-smooth: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
@@ -142,6 +146,11 @@ p {
     max-width: 600px;
 }
 
+/* Ensure core text (headings, paragraphs, list items) stays the intended light color */
+h1, h2, h3, h4, h5, p, li {
+    color: var(--text-main) !important;
+}
+
 .highlight {
     background: linear-gradient(90deg, #fff, #999);
     background-clip: text;
@@ -234,6 +243,18 @@ body::after {
     color: var(--accent);
 }
 
+/* Make hero CTA secondary buttons white to match 'Contact Me' & 'Download CV' */
+.cta-wrapper .secondary-btn {
+    background: var(--accent);
+    color: #000;
+    border: none;
+}
+
+.cta-wrapper .secondary-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.15);
+}
+
 /* Hero Specific */
 #hero {
     padding-top: 160px;
@@ -289,6 +310,37 @@ body::after {
     line-height: 1.4;
     margin-bottom: 2rem;
     color: var(--text-main);
+}
+
+/* Ensure hero heading stays visible above animated background */
+.hero-text-col h1 {
+    color: var(--accent) !important;
+    position: relative;
+    z-index: 30;
+    font-size: 3.2rem;
+    line-height: 1.05;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+.hero-text-col h1 .highlight {
+    color: var(--accent) !important;
+    -webkit-text-fill-color: var(--accent) !important;
+    background: none !important;
+    background-clip: border-box !important;
+}
+
+/* Defensive override: ensure animated elements are visible even if JS didn't run */
+.animate-text {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    visibility: visible !important;
+}
+
+/* Make sure hero text column is above any background layers */
+.hero-text-col {
+    position: relative;
+    z-index: 40;
 }
 
 .scroll-indicator {
@@ -372,6 +424,31 @@ body::after {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 4rem;
+}
+
+/* Improve contrast for skills section against animated background */
+.skills-grid {
+    position: relative;
+    background: linear-gradient(180deg, rgba(5,5,5,0.6), rgba(10,10,10,0.35));
+    padding: 2rem;
+    border-radius: 12px;
+    z-index: 12;
+    backdrop-filter: blur(6px) saturate(120%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+
+.skills-grid > .skill-category {
+    background: transparent;
+    position: relative;
+    z-index: 13;
+}
+
+@media (max-width: 900px) {
+    .skills-grid {
+        padding: 1rem;
+        gap: 2rem;
+        border-radius: 10px;
+    }
 }
 
 .skill-list {
@@ -615,6 +692,67 @@ footer p {
         width: 250px;
         height: 250px;
     }
+
+    /* Make CTA buttons smaller and stack on narrow screens */
+    .cta-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .cta-wrapper .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        border-radius: 6px;
+        text-transform: none;
+        min-width: 160px;
+    }
+
+    .cta-wrapper .primary-btn,
+    .cta-wrapper .secondary-btn {
+        margin-left: 0;
+    }
+}
+
+/* Mobile-only notice for skills if layout is condensed */
+.skills-coming-soon {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .skills-coming-soon {
+        display: block;
+        text-align: center;
+        color: var(--accent);
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        margin: 1.2rem auto;
+        max-width: 360px;
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+}
+
+/* Global quick-animation override: make transitions snappy across devices */
+*,
+*::before,
+*::after {
+    transition-duration: 0.12s !important;
+    transition-delay: 0s !important;
+    transition-timing-function: var(--ease-smooth) !important;
+}
+
+/* Reduce hover/transform easing for a quicker feel */
+.project-card,
+.skill-item,
+.info-item,
+.btn,
+.submit-btn,
+.profile-photo {
+    transition: transform 0.12s var(--ease-smooth) !important;
 }
 
 /* New Contact Section Styles */
