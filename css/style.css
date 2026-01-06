@@ -428,22 +428,7 @@ body::after {
     }
 }
 
-.cube-placeholder {
-    width: 200px;
-    height: 200px;
-    border: 2px solid var(--border-color);
-    position: relative;
-    transform: rotate(45deg);
-    transition: transform 1s ease;
-}
 
-.cube-placeholder::before {
-    content: '';
-    position: absolute;
-    inset: 20px;
-    border: 2px solid var(--accent);
-    opacity: 0.5;
-}
 
 /* Animations */
 .reveal-text {
