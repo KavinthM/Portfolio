@@ -80,51 +80,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Section Reveals (excluding skills which load immediately)
-    gsap.utils.toArray('section').forEach(section => {
-        // Skip animations for skills section - skills load immediately on page load
-        if (section.id === 'skills') {
-            return;
-        }
-        
-        const elems = section.querySelectorAll('h2, .project-card, .article-card');
-        if (elems.length > 0) {
-            gsap.fromTo(elems,
-                { y: 20, opacity: 0 },
+    // Section Reveals (excluding skills which load immediately)
+    if (!isMobile) {
+        gsap.utils.toArray('section').forEach(section => {
+            // Skip animations for skills section - skills load immediately on page load
+            if (section.id === 'skills') {
+                return;
+            }
+            
+            const elems = section.querySelectorAll('h2, .project-card, .article-card');
+            if (elems.length > 0) {
+                gsap.fromTo(elems,
+                    { y: 20, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: sectionDuration,
+                        stagger: isMobile ? 0.06 : 0.1,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top 85%",
+                        }
+                    }
+                );
+            }
+        });
+    }
+
+    // Paragraph Reveal (Entrance Animation)
+    // Paragraph Reveal (Entrance Animation)
+    if (!isMobile) {
+        gsap.utils.toArray('.reveal-text').forEach(text => {
+            gsap.fromTo(text,
+                {
+                    y: 30,
+                    opacity: 0
+                },
                 {
                     y: 0,
                     opacity: 1,
-                    duration: sectionDuration,
-                    stagger: isMobile ? 0.06 : 0.1,
-                    ease: "power2.out",
+                    duration: paraDuration,
+                    ease: "power3.out",
                     scrollTrigger: {
-                        trigger: section,
-                        start: "top 85%",
+                        trigger: text,
+                        start: "top 90%",
+                        toggleActions: "play none none none"
                     }
                 }
             );
-        }
-    });
-
-    // Paragraph Reveal (Entrance Animation)
-    gsap.utils.toArray('.reveal-text').forEach(text => {
-        gsap.fromTo(text,
-            {
-                y: 30,
-                opacity: 0
-            },
-            {
-                y: 0,
-                opacity: 1,
-                duration: paraDuration,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: text,
-                    start: "top 90%",
-                    toggleActions: "play none none none"
-                }
-            }
-        );
-    });
+        });
+    }
 
     // 3. Three.js Background Element (Simple Rotating 3D Object)
     // Disable heavy 3D on mobile to improve performance and visibility
