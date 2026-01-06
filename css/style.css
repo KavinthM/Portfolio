@@ -107,11 +107,7 @@ main {
     position: relative;
 }
 
-@media (max-width: 768px) {
-    .full-screen-section {
-        padding: 1.5rem 1.5rem;
-    }
-}
+
 
 .container {
     max-width: 1200px;
@@ -415,8 +411,15 @@ body::after {
     }
 
     .about-visuals {
-        flex: 0;
+        flex: 0 0 auto;
         width: 100%;
+    }
+}
+
+  /* Moved from above to ensure cascade priority */
+@media (max-width: 768px) {
+    .full-screen-section {
+        padding: 1.5rem 1.5rem;
     }
 }
 
