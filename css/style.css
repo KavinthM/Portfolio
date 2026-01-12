@@ -203,7 +203,7 @@ body::after {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 1.2rem 3rem;
+    padding: 0.9rem 1.8rem;
     border-radius: 4px;
     /* More modern, sharp look */
     text-decoration: none;
@@ -258,11 +258,20 @@ body::after {
     color: var(--accent);
 }
 
+/* Hero CTA Wrapper */
+.cta-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
 /* Make hero CTA secondary buttons white to match 'Contact Me' & 'Download CV' */
 .cta-wrapper .secondary-btn {
     background: var(--accent);
     color: #000;
     border: none;
+    margin-left: 0;
 }
 
 .cta-wrapper .secondary-btn:hover {
@@ -289,13 +298,13 @@ body::after {
 
 .hero-text-col {
     flex: 1;
-    max-width: 60%;
+    max-width: 65%;
     text-align: left;
 }
 
 .hero-img-col {
     flex: 1;
-    max-width: 40%;
+    max-width: 35%;
     display: flex;
     justify-content: center;
     align-items: center;
