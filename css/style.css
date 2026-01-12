@@ -203,9 +203,9 @@ body::after {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 0.9rem 1.8rem;
-    border-radius: 4px;
-    /* More modern, sharp look */
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    /* Pill / Oval shape */
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
@@ -298,13 +298,13 @@ body::after {
 
 .hero-text-col {
     flex: 1;
-    max-width: 65%;
+    max-width: 70%;
     text-align: left;
 }
 
 .hero-img-col {
     flex: 1;
-    max-width: 35%;
+    max-width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -774,7 +774,7 @@ footer p {
     .cta-wrapper .btn {
         padding: 0.9rem 2rem;
         font-size: 1rem;
-        border-radius: 6px;
+        border-radius: 50px;
         text-transform: none;
         min-width: 220px;
     }
